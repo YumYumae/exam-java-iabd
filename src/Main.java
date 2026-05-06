@@ -1,6 +1,7 @@
 import exo.Partie1;
 import exo.Partie2;
 import exo.Partie3;
+import exo.Partie4;
 import factory.TripFactory;
 import models.Trip;
 
@@ -12,6 +13,7 @@ void main() {
     Partie1 partie1 = new Partie1();
     Partie2 partie2 = new Partie2();
     Partie3 partie3 = new Partie3();
+    Partie4 partie4 = new Partie4();
 
     System.out.println("PARTIE 1");
     System.out.println("Trajets longs et chers : " + partie1.longAndExpensiveTrips(trips).size());
@@ -26,4 +28,10 @@ void main() {
     System.out.println("\nPARTIE 3");
     System.out.println("Top 10 chers : " + partie3.top10ExpensiveTrips(trips).size());
     System.out.println("Meilleur trajet : " + partie3.bestTrip(trips));
+
+    System.out.println("\nPARTIE 4");
+    System.out.println("Revenu séquentiel : " + partie4.totalRevenueSequential(trips));
+    System.out.println("Revenu parallèle : " + partie4.totalRevenueParallel(trips));
+    System.out.println("Par ville (parallèle) : " + partie4.countByCityParallel(trips));
+    System.out.println("Trajets premium (parallèle) : " + partie4.premiumTripsParallel(trips).size());
 }
