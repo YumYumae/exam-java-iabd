@@ -7,18 +7,18 @@ import java.util.List;
 import java.util.Optional;
 
 public class Partie3 {
-
+    Comparator<Trip> byPrice = Comparator.comparingDouble(Trip::price);
+    Comparator<Trip> byRating = Comparator.comparingDouble(Trip::rating);
+    
     public List<Trip> top10ExpensiveTrips(List<Trip> trips) {
-        // coder ici
         return trips.stream()
-            .sorted(Comparator.comparingDouble(Trip::price).reversed())
-            .limit(10)
-            .toList();
+                .sorted(byPrice.reversed())
+                .limit(10)
+                .toList();
     }
 
     public Optional<Trip> bestTrip(List<Trip> trips) {
-        // coder ici
         return trips.stream()
-            .max(Comparator.comparingDouble(Trip::rating));
+                .max(byRating);
     }
 }
